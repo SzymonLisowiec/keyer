@@ -124,7 +124,7 @@ Returns full list.
 
 # Methods support
 
-- | Redis
+. | Redis
 :---|:---:
 connect | ✓
 disconnect | ✓
