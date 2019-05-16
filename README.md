@@ -1,5 +1,5 @@
 
-# Unofficial EpicGames Client for Node.js
+# Keyer
 [![npm version](https://img.shields.io/npm/v/keyer.svg)](https://npmjs.com/package/keyer)
 [![npm downloads](https://img.shields.io/npm/dm/keyer.svg)](https://npmjs.com/package/keyer)
 [![license](https://img.shields.io/npm/l/keyer.svg)](https://github.com/SzymonLisowiec/keyer/blob/master/LICENSE.MD)
