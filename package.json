@@ -1,0 +1,32 @@
+{
+ "name": "keyer",
+ "version": "1.0.0",
+ "description": "One client for all key-value databases.",
+ "main": "index.js",
+ "keywords": [
+  "kv",
+  "key",
+  "value",
+  "database",
+  "client"
+ ],
+ "homepage": "https://github.com/SzymonLisowiec/keyer",
+ "bugs": {
+  "url": "https://github.com/SzymonLisowiec/keyer/issues"
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/SzymonLisowiec/keyer.git"
+ },
+ "author": {
+  "name": "Szymon Lisowiec",
+  "url": "https://kysune.me"
+ },
+ "license": "MIT",
+ "engines": {
+  "node": ">=8.0.0"
+ },
+ "dependencies": {
+  "redis": "^2.8.0"
+ }
+}
