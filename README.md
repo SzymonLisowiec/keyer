@@ -143,6 +143,13 @@ listGetIndex | ✓
 listGetRange | ✓
 listGetFull | ✓
 
+# Events
+
+## connected
+## disconnected
+## error
+## warning
+
 # License
 MIT License
 
