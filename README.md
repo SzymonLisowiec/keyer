@@ -2,7 +2,7 @@
 # Keyer
 [![npm version](https://img.shields.io/npm/v/keyer.svg)](https://npmjs.com/package/keyer)
 [![npm downloads](https://img.shields.io/npm/dm/keyer.svg)](https://npmjs.com/package/keyer)
-[![license](https://img.shields.io/npm/l/keyer.svg)](https://github.com/SzymonLisowiec/keyer/blob/master/LICENSE.MD)
+[![license](https://img.shields.io/npm/l/keyer.svg)](https://github.com/SzymonLisowiec/keyer/blob/master/LICENSE.md)
 [![paypal](https://img.shields.io/badge/paypal-donate-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FDN57KFYRP4CQ&source=url)
 
 One client for all key-value databases. Why? Useful while you make e.g. cache library and you want support for multiple databases.
