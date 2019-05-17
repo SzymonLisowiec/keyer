@@ -169,7 +169,7 @@ listGetFull | ✓ | ✗
 
 If you are missing support for any database, please contribute Keyer. Below you have dialect examples.
 - Redis dialect: [/dialects/redis/index.js](https://github.com/SzymonLisowiec/keyer/blob/master/dialects/redis/index.js)
-- Memcached dialect: [/dialects/memcached/index.js](https://github.com/SzymonLisowiec/keyer/blob/master/dialects/redis/index.js)
+- Memcached dialect: [/dialects/memcached/index.js](https://github.com/SzymonLisowiec/keyer/blob/master/dialects/memcached/index.js)
 
 # License
 MIT License
