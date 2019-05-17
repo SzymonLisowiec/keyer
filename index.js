@@ -6,10 +6,7 @@ class Main extends EventEmitter {
   constructor(config) {
     super();
 
-    this.config = {
-      host: '127.0.0.1',
-      ...config
-    };
+    this.config = config;
     this.dialect = null;
     this.methods = [
 

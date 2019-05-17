@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/npm/l/keyer.svg)](https://github.com/SzymonLisowiec/keyer/blob/master/LICENSE.md)
 [![paypal](https://img.shields.io/badge/paypal-donate-orange.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FDN57KFYRP4CQ&source=url)
 
-One client for all key-value databases. Why? Useful while you make e.g. cache library and you want support for multiple databases.
+One client and API for all key-value databases. Why? Useful while you make e.g. cache library and you want support for multiple databases.
 
 # Installation
 ```
@@ -39,6 +39,22 @@ const Keyer = require('keyer');
 
 ```
 
+# Constructor
+
+```javascript
+new Keyer({
+  dialect: 'redis', // kv database
+
+  host: '127.0.0.1',
+  port: 6379,
+  // or
+  server: '127.0.0.1:6379', // for e.g. Memcached
+
+  // Keyer supports more options depends on database.
+  // Redis: https://www.npmjs.com/package/redis#options-object-properties
+  // Memcached: https://www.npmjs.com/package/memcached#options
+});
+```
 
 # Methods
 
@@ -78,7 +94,6 @@ Returns value for given key.
 ```javascript
 await keyer.set('foo', 'bar', {
   expire: 60, // expire time in seconds
-  expireMs: 60000, // also you can give expire time in milliseconds,
   onlyIfExists: true, // only modify already existing key
   ignoreIfExists: true, // don't set key if already exists
 });
@@ -124,24 +139,24 @@ Returns full list.
 
 # Methods support
 
-. | Redis
-:---|:---:
-connect | ✓
-disconnect | ✓
-get | ✓
-set | ✓
-del | ✓
-flush | ✓
-exists | ✓
-listAppend | ✓
-listPrepend | ✓
-listPop | ✓
-listShift | ✓
-listLength | ✓
-listSetIndex | ✓
-listGetIndex | ✓
-listGetRange | ✓
-listGetFull | ✓
+. | Redis | Memcached
+:---|:---:|:---:
+connect | ✓ | ✓
+disconnect | ✓ | ✓
+get | ✓ | ✓
+set | ✓ | ✓
+del | ✓ | ✓
+flush | ✓ | ✓
+exists | ✓ | ✓
+listAppend | ✓ | ✗
+listPrepend | ✓ | ✗
+listPop | ✓ | ✗
+listShift | ✓ | ✗
+listLength | ✓ | ✗
+listSetIndex | ✓ | ✗
+listGetIndex | ✓ | ✗
+listGetRange | ✓ | ✗
+listGetFull | ✓ | ✗
 
 # Events
 
@@ -149,6 +164,12 @@ listGetFull | ✓
 ## disconnected
 ## error
 ## warning
+
+# Contributing
+
+If you are missing support for any database, please contribute Keyer. Below you have dialect examples.
+- Redis dialect: [/dialects/redis/index.js](https://github.com/SzymonLisowiec/keyer/blob/master/dialects/redis/index.js)
+- Memcached dialect: [/dialects/memcached/index.js](https://github.com/SzymonLisowiec/keyer/blob/master/dialects/redis/index.js)
 
 # License
 MIT License

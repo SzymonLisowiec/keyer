@@ -10,7 +10,7 @@ class RedisDialect {
   }
 
   validateConfig() {
-    if (!this.config.host) throw new Error('No host specified.');
+    if (!this.config.host) this.config.host = '127.0.0.1';
     if (!this.config.port) this.config.port = 6379;
     if (!this.config.database) this.config.database = 0;
     this.config.db = this.config.database;
@@ -65,9 +65,8 @@ class RedisDialect {
         if (options.ignoreIfExists) args.push('NX');
         if (options.onlyIfExists) args.push('XX');
         if (options.expire) args.push('EX', options.expire);
-        else if (options.expireMs) args.push('PX', options.expireMs);
       }
-      this.connection.set(key, value, ...args, (err, result) => {
+      this.connection.set(key, value, ...args, (err) => {
         if (err) reject(err);
         else resolve();
       });
@@ -85,7 +84,7 @@ class RedisDialect {
 
   del(key) {
     return new Promise((resolve, reject) => {
-      this.connection.del(key, (err, result) => {
+      this.connection.del(key, (err) => {
         if (err) reject(err);
         else resolve();
       });
@@ -94,7 +93,7 @@ class RedisDialect {
 
   flush() {
     return new Promise((resolve, reject) => {
-      this.connection.send_command('FLUSHDB', (err, result) => {
+      this.connection.send_command('FLUSHDB', (err) => {
         if (err) reject(err);
         else resolve();
       });
@@ -157,7 +156,7 @@ class RedisDialect {
 
   listSetIndex(key, index, value) {
     return new Promise((resolve, reject) => {
-      this.connection.send_command('LSET', [key, index, value], (err, result) => {
+      this.connection.send_command('LSET', [key, index, value], (err) => {
         if (err) reject(err);
         else resolve();
       });

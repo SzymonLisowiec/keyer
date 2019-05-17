@@ -1,14 +1,17 @@
 {
  "name": "keyer",
- "version": "1.0.3",
- "description": "One client for all key-value databases.",
+ "version": "1.1.0",
+ "description": "One client and API for all key-value databases.",
  "main": "index.js",
  "keywords": [
   "kv",
   "key",
   "value",
   "database",
-  "client"
+  "client",
+  "nosql",
+  "redis",
+  "memcached"
  ],
  "homepage": "https://github.com/SzymonLisowiec/keyer",
  "bugs": {
@@ -27,6 +30,7 @@
   "node": ">=8.0.0"
  },
  "dependencies": {
+  "memcached": "^2.2.2",
   "redis": "^2.8.0"
  }
 }
